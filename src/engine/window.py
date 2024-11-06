@@ -8,6 +8,8 @@ class Window:
 
         self.screen = Screen()
 
+        self.clock = pg.time.Clock()
+
     def event_handler(self):
         for event in pg.event.get():
             if event.type == pg.QUIT:
@@ -22,7 +24,9 @@ class Window:
         pg.display.flip()
 
     def update(self):
-        self.screen.update(0)
+        dt = self.clock.tick(120) / 1000
+
+        self.screen.update(dt)
 
     def run(self):
         while True:
