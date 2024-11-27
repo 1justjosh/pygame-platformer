@@ -1,14 +1,18 @@
 from src.engine.settings import *
 from src.engine.loader import *
 from src.entities.player import Player
+from src.world.world_generator import WorldGenerator
 
 class World:
     def __init__(self):
         self.win = pg.display.get_surface()
 
+        self.visible_sprites = pg.sprite.Group()
+
+        WorldGenerator(self.visible_sprites)
+
         self.player_type = "Ninja Frog"
         self.load_assets()
-        self.visible_sprites = pg.sprite.Group()
 
         self.entity = Player((100,100),self.assets["player"],self.visible_sprites)
 

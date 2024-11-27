@@ -2,7 +2,7 @@ import pygame as pg
 import sys
 import os
 
-RES = WIDTH,HEIGHT = 1080,720
+RES = WIDTH,HEIGHT = 1088,720
 TITLE = "Platformer"
 
 TILE_SIZE = 64
